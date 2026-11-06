@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipe Management System for 68 PLC Machines | Divya Sakre</title>
+<meta name="description" content="How Divya Sakre led a team of 4 to build a Recipe Management System for 68 PLC tire machines, cutting recipe changes from 8 to 3–4 minutes.">
+<link rel="canonical" href="https://divyasakre.github.io/work/recipe-management.html">
+<meta property="og:title" content="Recipe Management System for 68 PLC Machines | Divya Sakre">
+<meta property="og:description" content="How Divya Sakre led a team of 4 to build a Recipe Management System for 68 PLC tire machines, cutting recipe changes from 8 to 3–4 minutes.">
+<meta property="og:image" content="https://divyasakre.github.io/assets/divya.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="../index.html"><span class="mark">DS</span>Divya Sakre</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <ul id="menu"><li><a href="../index.html#experience">Experience</a></li><li><a href="../index.html#work">Work</a></li><li><a href="../assets/Divya_Sakre_Resume.pdf" target="_blank" rel="noopener">Resume</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</div></header>
+<main id="main">
+<div class="cs-hero"><div class="wrap">
+  <a class="back" href="../index.html#work">← All work</a>
+  <p class="eyebrow" style="margin-top:22px">Case study · Ketsol · Tire manufacturing</p>
+  <h1>Recipe Management System for 68 PLC tire machines</h1>
+  <p class="lede">A tire plant edited machine recipes by hand on SCADA screens. I led the team that centralized them, so a recipe now reaches the machine with one barcode scan.</p>
+  <div class="facts"><div class="fact"><small>Role</small><div>Full stack dev &amp; team lead</div></div><div class="fact"><small>Team</small><div>4 (2 frontend, 1 backend, me)</div></div><div class="fact"><small>Client</small><div>A major tire manufacturer</div></div><div class="fact"><small>Result</small><div>8 → 3–4 min per change</div></div></div>
+</div></div>
+<div class="cs"><div class="wrap cs-grid">
+  <ul class="toc"><li><a href="#problem">The problem</a></li><li><a href="#built">What we built</a></li><li><a href="#role">My role</a></li><li><a href="#result">Results</a></li><li><a href="#stack">Tech stack</a></li></ul>
+  <article class="cs-body"><section id="problem" class="reveal"><h2>The problem</h2><p>The plant ran about <strong>68 PLC tire machines</strong>, and their recipes lived in different places with no single source of truth. To check or change a recipe, shop-floor staff edited values by hand in SCADA. Each change took about <strong>8 minutes</strong> and typing errors were common.</p></section><section id="built" class="reveal"><h2>What we built</h2><ul><li><strong>Central recipe library</strong> with master and child recipes, version history and per-machine recipe rules, so a machine only accepts the recipes it should run.</li><li><strong>Approval workflow</strong> with JWT role-based access and audit logs, so unapproved recipes never reach a machine.</li><li><strong>Barcode upload</strong> that I built on my own: a web page running in Chrome on handheld Android scanners. Operators scan a code and the right recipe is sent to the machine.</li><li><strong>Machine connectors</strong> over OPC UA, Modbus TCP and MQTT that push recipes to the PLCs and receive production alerts back, giving every tire a unique code.</li></ul><figure class="diagram"><svg viewBox="0 0 660 170" role="img" aria-hidden="true"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#38BDF8"/></marker></defs><rect x="10" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="67" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Scanner</text><text x="67" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">Android · Chrome</text><path d="M124 73 H142" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="142" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="198" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">RMS web app</text><text x="198" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">Next.js</text><path d="M255 73 H273" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="273" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="330" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">API + DB</text><text x="330" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">FastAPI · MySQL</text><path d="M387 73 H405" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="405" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="462" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Connectors</text><text x="462" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">OPC UA/Modbus/MQTT</text><path d="M518 73 H536" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="536" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="593" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">PLCs</text><text x="593" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">68 machines</text><path d="M593 106 V140 H67 V110" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ar)"/><text x="330" y="156" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="10.5">production alerts + tire codes back to RMS</text></svg><figcaption>Scan → approved recipe → machine, with alerts flowing back</figcaption></figure></section><section id="role" class="reveal"><h2>My role</h2><ul><li>Led a team of 4: planned weekly sprints and assigned backlog items.</li><li>Wrote the design documentation (architecture, database schema and UI plan) and worked with the client to define the data and APIs their machines would exchange.</li><li>Reviewed my team's code on GitHub before every merge.</li><li>Trained shop-floor workers to use the system in their daily work.</li></ul></section><section id="result" class="reveal"><h2>Results</h2><div class="ba"><div><small>Before</small><b>~8 min</b>manual SCADA edit, typing errors</div><div class="after"><small>After</small><b>3–4 min</b>barcode scan, fewer errors</div></div><p>Recipes for every machine now sit in one controlled place, with a version history and an audit trail for every change.</p></section><section id="stack" class="reveal"><h2>Tech stack</h2><div class="tags"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">FastAPI</span><span class="chip">MySQL</span><span class="chip">JWT</span><span class="chip">OPC UA</span><span class="chip">Modbus TCP</span><span class="chip">MQTT</span><span class="chip">Android barcode scanners</span></div></section><div class="next"><span></span><a href="manufacturing-suite.html">Shop-floor data platform →</a></div></article>
+</div></div>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Divya Sakre</span><a href="mailto:divyasakre2025@outlook.com">divyasakre2025@outlook.com</a></div></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

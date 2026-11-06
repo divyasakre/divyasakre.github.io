@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Vision on the Production Line | Divya Sakre</title>
+<meta name="description" content="How Divya Sakre trained and deployed YOLO models for 3 manufacturers (70%+ accuracy at 120 FPS) and built OpenCV and NVIDIA Jetson vision systems.">
+<link rel="canonical" href="https://divyasakre.github.io/work/industrial-vision.html">
+<meta property="og:title" content="Computer Vision on the Production Line | Divya Sakre">
+<meta property="og:description" content="How Divya Sakre trained and deployed YOLO models for 3 manufacturers (70%+ accuracy at 120 FPS) and built OpenCV and NVIDIA Jetson vision systems.">
+<meta property="og:image" content="https://divyasakre.github.io/assets/divya.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="../index.html"><span class="mark">DS</span>Divya Sakre</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <ul id="menu"><li><a href="../index.html#experience">Experience</a></li><li><a href="../index.html#work">Work</a></li><li><a href="../assets/Divya_Sakre_Resume.pdf" target="_blank" rel="noopener">Resume</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</div></header>
+<main id="main">
+<div class="cs-hero"><div class="wrap">
+  <a class="back" href="../index.html#work">← All work</a>
+  <p class="eyebrow" style="margin-top:22px">Case study · Ketsol · KVision and on-site vision systems</p>
+  <h1>Computer vision on the production line</h1>
+  <p class="lede">From plant footage to models running on site: object, defect and text detection for manufacturing clients, plus two smaller vision systems built for specific lines.</p>
+  <div class="facts"><div class="fact"><small>Role</small><div>Full stack + vision developer</div></div><div class="fact"><small>Clients</small><div>3 manufacturers (KVision)</div></div><div class="fact"><small>Accuracy</small><div>70%+</div></div><div class="fact"><small>Speed</small><div>120 FPS</div></div></div>
+</div></div>
+<div class="cs"><div class="wrap cs-grid">
+  <ul class="toc"><li><a href="#kvision">KVision platform</a></li><li><a href="#pipes">One photo per pipe</a></li><li><a href="#jetson">Pass/fail on the edge</a></li><li><a href="#stack">Tech stack</a></li></ul>
+  <article class="cs-body"><section id="kvision" class="reveal"><h2>KVision platform</h2><p>KVision is Ketsol's industrial computer vision platform. I worked directly with <strong>3 manufacturing clients</strong>:</p><ul><li>Collected video and images on the plant floor.</li><li>Trained <strong>YOLO</strong> models for object, defect (such as scratches), color and text (product name) detection.</li><li>Deployed the models at client sites, reaching <strong>70%+ accuracy at 120 FPS</strong>.</li><li>Built the platform's database, CRUD APIs and UI, with a multi-threaded camera pipeline.</li></ul><figure class="diagram"><svg viewBox="0 0 660 120" role="img" aria-hidden="true"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#38BDF8"/></marker></defs><rect x="10" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="67" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Plant cameras</text><text x="67" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">video · images</text><path d="M124 73 H142" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="142" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="198" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Dataset</text><text x="198" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">labeled frames</text><path d="M255 73 H273" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="273" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="330" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">YOLO training</text><text x="330" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">object · defect · text</text><path d="M387 73 H405" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="405" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="462" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">On-site model</text><text x="462" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">120 FPS</text><path d="M518 73 H536" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="536" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="593" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">KVision UI</text><text x="593" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">APIs · DB</text></svg><figcaption>Collect → train → deploy → review</figcaption></figure></section><section id="pipes" class="reveal"><h2>One photo per pipe</h2><p>A steel pipe manufacturer needed exactly one image of every pipe. I built an <strong>OpenCV</strong> system that uses each pipe's <strong>dwell time</strong> in the camera area to capture it once and skip duplicates, with no extra sensor.</p></section><section id="jetson" class="reveal"><h2>Pass/fail on the edge</h2><p>For an industrial clamp manufacturer, I built a vision service on <strong>NVIDIA Jetson</strong> that classifies parts as pass or fail from a live camera feed and logs the results.</p></section><section id="stack" class="reveal"><h2>Tech stack</h2><div class="tags"><span class="chip">YOLO</span><span class="chip">OpenCV</span><span class="chip">TensorFlow</span><span class="chip">NumPy</span><span class="chip">Python</span><span class="chip">NVIDIA Jetson</span><span class="chip">REST APIs</span></div></section><div class="next"><a href="manufacturing-suite.html">← Shop-floor data platform</a><a href="data-platform.html">Fundraising analytics data foundation →</a></div></article>
+</div></div>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Divya Sakre</span><a href="mailto:divyasakre2025@outlook.com">divyasakre2025@outlook.com</a></div></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

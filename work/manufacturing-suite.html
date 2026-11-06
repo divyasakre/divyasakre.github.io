@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop-floor Data Platform (Ketsol Manufacturing Suite) | Divya Sakre</title>
+<meta name="description" content="How Divya Sakre built OPC UA, Modbus and MQTT connectors, an InfluxDB time-series store and a drag-and-drop dashboard builder for a manufacturing suite.">
+<link rel="canonical" href="https://divyasakre.github.io/work/manufacturing-suite.html">
+<meta property="og:title" content="Shop-floor Data Platform (Ketsol Manufacturing Suite) | Divya Sakre">
+<meta property="og:description" content="How Divya Sakre built OPC UA, Modbus and MQTT connectors, an InfluxDB time-series store and a drag-and-drop dashboard builder for a manufacturing suite.">
+<meta property="og:image" content="https://divyasakre.github.io/assets/divya.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="../index.html"><span class="mark">DS</span>Divya Sakre</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <ul id="menu"><li><a href="../index.html#experience">Experience</a></li><li><a href="../index.html#work">Work</a></li><li><a href="../assets/Divya_Sakre_Resume.pdf" target="_blank" rel="noopener">Resume</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</div></header>
+<main id="main">
+<div class="cs-hero"><div class="wrap">
+  <a class="back" href="../index.html#work">← All work</a>
+  <p class="eyebrow" style="margin-top:22px">Case study · Ketsol · Ketsol Manufacturing Suite (KMS)</p>
+  <h1>Shop-floor data, from PLC to dashboard</h1>
+  <p class="lede">KMS is Ketsol's own data concentrator and visualization product. I built the machine connectors, the time-series store and the dashboard builder that let plant users make their own reports.</p>
+  <div class="facts"><div class="fact"><small>Role</small><div>Full stack developer</div></div><div class="fact"><small>Product</small><div>Ketsol Manufacturing Suite</div></div><div class="fact"><small>Protocols</small><div>OPC UA · Modbus · MQTT</div></div><div class="fact"><small>Users</small><div>Plant & shop-floor teams</div></div></div>
+</div></div>
+<div class="cs"><div class="wrap cs-grid">
+  <ul class="toc"><li><a href="#problem">The problem</a></li><li><a href="#built">What I built</a></li><li><a href="#result">Results</a></li><li><a href="#stack">Tech stack</a></li></ul>
+  <article class="cs-body"><section id="problem" class="reveal"><h2>The problem</h2><p>Plant machines speak different protocols, and their data rarely reaches the people who need it. Every new report needed a developer, and nobody was told about problems on the line in real time.</p></section><section id="built" class="reveal"><h2>What I built</h2><ul><li><strong>Python connectors</strong> for OPC UA, Modbus TCP and MQTT, tested against simulators and live PLC connections.</li><li><strong>InfluxDB time-series store</strong> running in Docker, holding machine data as it streams in, with RabbitMQ moving messages between services.</li><li><strong>Drag-and-drop report and dashboard builder</strong> in React: graphs, pie charts and tank visuals, each linked to live machine data.</li><li><strong>Alert notifications</strong> back to operators, with the UI wired to the platform APIs.</li></ul><figure class="diagram"><svg viewBox="0 0 660 170" role="img" aria-hidden="true"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#38BDF8"/></marker></defs><rect x="10" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="67" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Machines</text><text x="67" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">PLCs on the line</text><path d="M124 73 H142" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="142" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="198" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Connectors</text><text x="198" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">Python</text><path d="M255 73 H273" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="273" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="330" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Time series</text><text x="330" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">InfluxDB · Docker</text><path d="M387 73 H405" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="405" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="462" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">APIs</text><text x="462" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">alerts · queries</text><path d="M518 73 H536" stroke="#38BDF8" stroke-width="1.6" marker-end="url(#ar)"/><rect x="536" y="40" width="114" height="66" rx="10" fill="#10284D" stroke="#2B4C80"/><text x="593" y="68" text-anchor="middle" fill="#E6F0FF" font-family="JetBrains Mono,monospace" font-size="12">Builder</text><text x="593" y="86" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="9.5">React drag &amp; drop</text><path d="M593 106 V140 H67 V110" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ar)"/><text x="330" y="156" text-anchor="middle" fill="#7FA1D1" font-family="JetBrains Mono,monospace" font-size="10.5">alerts to operators</text></svg><figcaption>One pipeline from any protocol to a user-built dashboard</figcaption></figure></section><section id="result" class="reveal"><h2>Results</h2><ul><li>Shop-floor users build their own reports and dashboards from live machine data, without waiting on a developer.</li><li>Data from machines that speak three different protocols lands in one place, with alerts when something needs attention.</li></ul></section><section id="stack" class="reveal"><h2>Tech stack</h2><div class="tags"><span class="chip">Python</span><span class="chip">OPC UA</span><span class="chip">Modbus TCP</span><span class="chip">MQTT</span><span class="chip">InfluxDB</span><span class="chip">Docker</span><span class="chip">RabbitMQ</span><span class="chip">React</span></div></section><div class="next"><a href="recipe-management.html">← Recipe Management System</a><a href="industrial-vision.html">Computer vision on the line →</a></div></article>
+</div></div>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Divya Sakre</span><a href="mailto:divyasakre2025@outlook.com">divyasakre2025@outlook.com</a></div></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
